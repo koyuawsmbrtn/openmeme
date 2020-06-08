@@ -15,7 +15,7 @@ export default class App extends React.Component {
     var userLang = navigator.language || navigator.userLanguage;
     if (userLang.includes("de")) {
       translation = {
-        "intro": "Suche über das obere rechte Eingabefeld, um nach einem Meme zu suchen und drücke Enter um zu bestätigen.",
+        "intro": "Suche über das obere rechte Eingabefeld nach Memes und drücke Enter um zu bestätigen.",
         "placeholder": "Suche nach Memes...",
         "lookup": "Bitte warten...",
         "notfound": "Nicht gefunden."
