@@ -55,6 +55,7 @@ def image(text):
         return str(entry)
 
 @get("/<meme>")
+@get("/api/v1/<meme>")
 def index(meme):
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.content_type = "text/plain"
