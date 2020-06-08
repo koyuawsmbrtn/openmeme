@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav {
+  background: #13133E;
+  padding: 13px;
+  color: #fff;
+  min-height: 42px;
+  position: absolute;
+  width: calc(98% + 7px);
+  margin: 0;
+}
+
+#logo {
+  float: left;
+  font-family: 'Arvo', serif;
+  font-size: 24pt;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: 'Arvo', serif;
+}
+
+#search {
+  right: 10px;
+  top: 13px;
+  position: absolute;
+}
+
+#input_search {
+  padding: 10px;
+}
+
+#empty {
+  color: #ccc;
+  text-align: center;
+  padding-top: calc(50% - 56px);
+  font-size: 24pt;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+  padding: 20px;
+  padding-top: 90px;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+#content > p {
+  text-align: left;
+}
