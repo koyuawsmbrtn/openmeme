@@ -45,7 +45,7 @@ export default class App extends React.Component {
       $("#input_search").val(findGetParameter("q").split("+").join(" "));
       $("#content").html("<div id=\"empty\">"+translation.lookup+"</div>");
 
-      $.get(config.backend+"/"+findGetParameter("q"), function(data) {
+      $.get(config.backend+"/"+findGetParameter("q")+"?"+Date.now(), function(data) {
         console.log(data);
         $("#content").html("<div style=\"text-align:center\"><a style=\"float:right;padding:10px;\" href=\""+data.split("{{img}}")[1]+"\" target=\"_blank\"><img width=\"150\" src=\""+data.split("{{img}}")[1]+"\"></a><h1>"+data.split(". ")[0]+"</h1><p style=\"text-align:left;\">"+data.split(". ").slice(1).join(". ").split("{{img}}")[0]+"</p></div>");
       }).fail(function() {

@@ -36,7 +36,7 @@ def origin(text):
         r = requests.get(url, headers=HEADERS)
         soup = BeautifulSoup(r.text, 'html.parser')
         entry = soup.find('h2', {'id': 'origin'})
-        return '%s. %s' % (meme_name.split('/')[-1].title(), entry.next.next.next.text)
+        return '%s' % entry.next.next.next.text
 
 def spread(text):
     meme_name, url = search_meme(text)
@@ -44,7 +44,7 @@ def spread(text):
         r = requests.get(url, headers=HEADERS)
         soup = BeautifulSoup(r.text, 'html.parser')
         entry = soup.find('h2', {'id': 'spread'})
-        return '%s. %s' % (meme_name.split('/')[-1].title(), entry.next.next.next.text)
+        return '%s' % entry.next.next.next.text
 
 def image(text):
     meme_name, url = search_meme(text)
