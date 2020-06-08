@@ -6,7 +6,8 @@ import config from './config.json';
 var translation = {
   "intro": "Use the top right search box to search for a meme and press enter to confirm.",
   "placeholder": "Search for memes...",
-  "lookup": "Looking up..."
+  "lookup": "Looking up...",
+  "notfound": "Not found."
 };
 
 export default class App extends React.Component {
@@ -16,7 +17,8 @@ export default class App extends React.Component {
       translation = {
         "intro": "Suche über das obere rechte Eingabefeld, um nach einem Meme zu suchen und drücke Enter um zu bestätigen.",
         "placeholder": "Suche nach Memes...",
-        "lookup": "Bitte warten..."
+        "lookup": "Bitte warten...",
+        "notfound": "Nicht gefunden."
       };
     }
   }
@@ -46,6 +48,8 @@ export default class App extends React.Component {
       $.get(config.backend+"/"+findGetParameter("q"), function(data) {
         console.log(data);
         $("#content").html("<div style=\"text-align:center\"><a style=\"float:right;padding:10px;\" href=\""+data.split("{{img}}")[1]+"\" target=\"_blank\"><img width=\"150\" src=\""+data.split("{{img}}")[1]+"\"></a><h1>"+data.split(". ")[0]+"</h1><p style=\"text-align:left;\">"+data.split(". ").slice(1).join(". ").split("{{img}}")[0]+"</p></div>");
+      }).fail(function() {
+        $("#content").html("<div id=\"empty\">"+translation.notfound+"</div>");
       });
 
     } catch(e) {}
